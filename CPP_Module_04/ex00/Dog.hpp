@@ -4,17 +4,15 @@
 
 class Dog : public Animal
 {
-private:
- /* data */
-public:
- Dog();
- Dog(std::string name);
- ~Dog();
-   virtual std::string getType(std::string type);
-   virtual void makeSound(void) const;
 
+  public:
+  Dog();
+  Dog(const Dog &other);
+  ~Dog();
+
+  Dog &operator=(const Dog& other);
+  virtual void makeSound(void) const;
+  virtual std::string getType(std::string type);
 };
-
-
 
 #endif

@@ -4,13 +4,14 @@
 
 class Cat : public Animal
 {
-private:
- /* data */
-public:
- Cat(/* args */);
- ~Cat();
- void makeSound(void) const ;
-};
+    public:
+    Cat();
+    Cat(const Cat &other);
+    ~Cat();
 
+    Cat &operator=(const Cat& other);
+    void makeSound(void) const;
+    const std::string& getType() const;
+};
 
 #endif

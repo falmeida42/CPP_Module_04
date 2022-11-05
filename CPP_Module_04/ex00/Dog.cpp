@@ -1,26 +1,32 @@
 #include "Dog.hpp"
 
-Dog::Dog(std::string name)
-{
-  if (name.compare("Dog"))
-    this->type = "Dog";
-}
-
 Dog::Dog()
 {
-  this->type = "Dog";
+  this->_type = "Dog";
+  std::cout << "Animal " << _type << " created" << std::endl;
+
+}
+
+Dog::Dog(const Dog &other)
+{
+  if (this != &other)
+  {
+    this->_type = other._type;
+    std::cout << "Animal " << _type << " created" << std::endl;
+  }
 }
 
 Dog::~Dog()
 {
+  std::cout << "Animal " << _type << " destroyed" << std::endl;
 }
 
-std::string Dog::getType(std::string type) {
-
-  return (this->type);
-}
-
-void Dog::makeSound(void) const {
+void Dog::makeSound(void) const
+{
   std::cout << "Au" << std::endl;
 }
 
+std::string Dog::getType(std::string type)
+{
+  return (this->_type);
+}
