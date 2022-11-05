@@ -2,24 +2,21 @@
 
 Animal::Animal() : _type("not defined")
 {
-    std::cout << "Animal " << _type << " created" << std::endl;
 }
 
-Animal::Animal(const Animal &other) : _type(other._type) 
+Animal::Animal(const Animal &other) : _type(other._type)
 {
-    std::cout << "Animal " << _type << " created" << std::endl;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Animal " << _type << " destroyed" << std::endl;
+    std::cout << "Animal destroyed" << std::endl;
 }
 
 Animal & Animal::operator=(const Animal& other)
 {
     if (this != &other) {
         this->_type = other._type;
-        std::cout << "Animal " << _type << " created" << std::endl;
     }
     return *this;
 }

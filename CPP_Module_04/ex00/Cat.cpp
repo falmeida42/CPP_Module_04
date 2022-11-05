@@ -3,13 +3,11 @@
 Cat::Cat()
 {
     this->_type = "Cat";
-    std::cout << "Animal " << _type << " created" << std::endl;
 }
 
 Cat::Cat(const Cat &other)
 {
     this->_type = other._type;
-    std::cout << "Animal " << this->_type << " created" << std::endl;
 
 }
 
@@ -23,7 +21,6 @@ Cat &Cat::operator=(const Cat& other)
     if(this != &other)
     {
         this->_type = other._type;
-        std::cout << "Animal " << _type << " destroyed" << std::endl;
     }
 
     return *this;
