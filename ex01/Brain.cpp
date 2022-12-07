@@ -28,20 +28,17 @@ std::string    *Brain::getIdeas(void)
 
 Brain   &Brain::operator=(Brain &other)
 {
-    std::cout << "Hello" << std::endl;
     
   if (this != &other)
   {
     std::string *ideas_slot = other.getIdeas();
+    delete[] this->ideas;
     this->ideas = new std::string[100];
     for (int i = 0; i < 100; i++)
     {
         this->ideas[i] = ideas_slot[i];
-        std::cout << this->ideas[i] << " -> " << &this->ideas[i] <<
-        " " << other.ideas[i] << " -> " << &other.ideas[i] << std::endl;
-        }
     }
-    std::cout << "Hello" << std::endl;
+  }
     return (*this);    
 }
 
@@ -49,9 +46,7 @@ Brain::~Brain()
 {
     if (this->ideas)
     {
-         std::cout << "inside" << std::endl;
      delete[] this->ideas;
      this->ideas = nullptr;
     }
-        std::cout << "outside" << std::endl;
 }

@@ -3,12 +3,14 @@
 Cat::Cat()
 {
     this->_type = "Cat";
+    brain = new Brain();
 }
 
 Cat::Cat(const Cat &other)
 {
     this->_type = other._type;
 
+     
 }
 
 Cat::~Cat()
