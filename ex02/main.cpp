@@ -7,9 +7,7 @@ int main( void )
 {
 	const Animal* dog = new Dog();
 	const Animal* cat = new Cat();
-	const Animal* animal = new Animal();
-
-	delete animal;
+	//const Animal* animal = new Animal();
 
 	std::cout << std::endl;
 
